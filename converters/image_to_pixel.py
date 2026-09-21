@@ -1,26 +1,35 @@
 from skimage import io
-from pyxelate import Pyx, Pal
+from pyxelate import Pyx
 from pathlib import Path
 
-# Path to the current directory
-FILE_PATH = Path(__file__).parent.resolve()
+INFILE = "sample_scare.png"
+DIR = Path(__file__).parent.resolve()
 
-print("-" * 50)
-print("Finding IMG..")
-image = io.imread(f"{FILE_PATH}/data/sample_scare.png")
-print("IMG found, reading..")
+def image_to_pixel(img, *file_out_name, downsample_by = 14, palette = 7):
+    print("-" * 50)
+    print("Finding IMG..")
 
-downsample_by = 14
-palette = 10
+    #image = io.imread(f"{DIR}/input/{INFILE}")
+    image = img
+    print("IMG found, reading..")
 
-pyx = Pyx(factor=downsample_by, palette = palette)
+    downsample_by = 14
+    palette = 7
 
-pyx.fit(image)
+    pyx = Pyx(factor=downsample_by, palette = palette)
 
-print("Transforming..")
-new_image = pyx.transform(image)
+    pyx.fit(image)
 
-print("Saving..")
-io.imsave(f"{FILE_PATH}/data/converted.png", new_image)
-print("Done!")
-print("-" * 50)
+    print("Transforming..")
+    new_image = pyx.transform(image)
+
+    print("Saving..")
+
+    file_out = file_out_name if file_out_name else "output.png"
+
+    io.imsave(f"{DIR}/output/{file_out}", new_image)
+    print(f"Finished! Image saved to converters/output/{file_out}")
+    print("-" * 50)
+
+if __name__ == "__main__":
+    pass # Todo: next steps here
