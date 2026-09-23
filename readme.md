@@ -35,6 +35,6 @@ python main.py -w 10
 ```
 ___
 
-Have fun!
+## Have fun!
 
 
