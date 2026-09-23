@@ -11,24 +11,28 @@ Pre-requirement: Python, Pip. [A virtual environment is recommended](https://itn
 1. **Clone the repository**.
 2. **To install all the dependencies, use:**
 
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
 *Make sure you are inside the curses_jumpscare directory when running this command*
 
 *Make sure your virtual environment is activated!*
 
 3. **Run the jumpscare with:**
-    
-    python main.py
+```   
+python main.py
+```
 
 4. **To adjust the wait time before the scare appears, use:**
-    
-    python main.py -w [time]
+```
+python main.py -w [time]
+```
 
 For example, this is 10 seconds of wait time:
-   
-    python main.y -w 10
-
+```
+python main.py -w 10
+```
 ___
 
 Have fun!
