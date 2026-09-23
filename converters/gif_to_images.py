@@ -14,3 +14,4 @@ while True:
         
     except EOFError:
         print("End of gif reached, finished!")
+        break
