@@ -10,8 +10,11 @@ Pre-requirement: Python, Pip. [A virtual environment is recommended](https://itn
 
 1. Clone the repository.
 2. To install all the dependencies, use:
+
     pip install -r requirements.txt
+
 *Make sure you are inside the curses_jumpscare directory when running this command*
+
 *Make sure your virtual environment is activated!*
 
 3. Run the jumpscare with:
