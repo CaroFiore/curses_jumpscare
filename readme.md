@@ -8,8 +8,8 @@ ___
 ### Installation
 Pre-requirement: Python, Pip. [A virtual environment is recommended](https://itnext.io/a-quick-guide-on-how-to-setup-a-python-virtual-environment-windows-linux-mac-bf662c2c77d3).
 
-1. Clone the repository.
-2. To install all the dependencies, use:
+1. **Clone the repository**.
+2. **To install all the dependencies, use:**
 
     pip install -r requirements.txt
 
@@ -17,11 +17,11 @@ Pre-requirement: Python, Pip. [A virtual environment is recommended](https://itn
 
 *Make sure your virtual environment is activated!*
 
-3. Run the jumpscare with:
+3. **Run the jumpscare with:**
     
     python main.py
 
-4. To adjust the wait time before the scare appears, use 
+4. **To adjust the wait time before the scare appears, use:**
     
     python main.py -w [time]
 
