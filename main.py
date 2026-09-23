@@ -5,6 +5,12 @@ from app.color import Color
 from time import sleep
 from converters.resizer import resize_image
 from pathlib import Path
+from playsound3 import playsound
+import argparse
+
+parser = argparse.ArgumentParser(description="A jumpscare on the command line!")
+parser.add_argument("-w", help = "Waiting time before the scare happens", type=float)
+args = parser.parse_args()
 
 def print_pixels(pixel_list : list[Pixel], term):
     '''
@@ -90,11 +96,18 @@ def main():
     pixel_list we generated. Sleep time inbetween to create the animation.
     '''
     print(term.clear())
-    sleep(1)
 
+    wait_time = args.w if args.w else 1
+    sleep(wait_time)
+
+    sound = playsound("jumpscare.mp3", block = False)
+    
     for frame in frame_list:
         sleep(0.02)
         print_pixels(frame, term)
+    sleep(0.2)
+    sound.stop()
+    
     # ----------------------------------------------
     '''
     Done! Now just wait for the input from the user to close the scare.
